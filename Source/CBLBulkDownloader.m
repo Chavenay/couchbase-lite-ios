@@ -51,7 +51,7 @@
         NSArray* attsSince = [_db.storage getPossibleAncestorRevisionIDs: rev
                                                            limit: kMaxNumberOfAttsSince
                                                  onlyAttachments: YES];
-        if (!attsSince.count == 0)
+        if (attsSince.count == 0)
             attsSince = nil;
         return $dict({@"id", rev.docID},
                      {@"rev", rev.revID},
